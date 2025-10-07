@@ -25,3 +25,17 @@ if ($stmt->execute()) {
 $stmt->close();
 $conexion->close();
 ?>
+
+// Creamos una nueva conexión con la base de datos MySQL
+// new mysqli("servidor", "usuario", "contraseña", "nombre_base_de_datos")
+$conexion = new mysqli("localhost", "root", "", "usuarios_db");
+
+// Verificamos si ocurrió un error al conectar
+if ($conexion->connect_error) {
+
+    // Si hay error, se detiene el programa y se muestra el mensaje
+    die("Conexión fallida: " . $conexion->connect_error);
+}
+
+// -------------------------------------------------------
+// Tomamos los datos
